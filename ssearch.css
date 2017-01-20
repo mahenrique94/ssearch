@@ -47,7 +47,7 @@
 	line-height: 35px;
 	padding: 0 .5rem;
 }
-.ss-search__item:hover {
+.ss-search__item.is-hovered, .ss-search__item:hover {
 	background: #80AAFF;
 	color: #F2F2F2;
 	cursor: pointer;
