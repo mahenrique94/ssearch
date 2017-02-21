@@ -42,15 +42,9 @@ class SSearch {
 				ssData.value = list.querySelector(`[data-ss-value='${ssDataValue}']`).textContent;
 			}, 1500);
 		}
-		ssData.addEventListener('blur', function(event) {
-			event.preventDefault();
-			hideElement(list);
-		});
-		ssData.addEventListener('click', function() {
-			filter(ssData, list);
-			showElement(list);
-		});
 		ssData.addEventListener('focus', function() {
+			autoSize(this.parentNode.previousSibling.previousSibling);
+			toggleIcon(this.nextSibling);
 			filter(ssData, list);
 			showElement(list);
 		});
@@ -81,6 +75,10 @@ class SSearch {
 	createIcon() {
 		const icon = document.createElement('SPAN');
 		icon.classList.add('icon-angle-down', 'ss-search__icon');
+		icon.addEventListener('click', function() {
+			toggleIcon(this);
+			autoSize(this.previousSibling.parentNode.previousSibling.previousSibling);
+		});
 		this.icon = icon;
 		return icon;
 	}
@@ -115,6 +113,23 @@ class SSearch {
 	
 }
 
+function autoSize(obj) {
+	if (obj.classList.contains('js-autoSize'))
+		obj.parentNode.style.height = '300px';
+}
+
+function toggleIcon(icon) {
+	if (icon.classList.contains('icon-angle-down')) {
+		showElement(icon.nextSibling);
+		icon.classList.remove('icon-angle-down');
+		icon.classList.add('icon-angle-up');
+	} else {
+		hideElement(icon.nextSibling);
+		icon.classList.remove('icon-angle-up');
+		icon.classList.add('icon-angle-down');
+	}
+}
+
 // Selecionando o item e definindo ele como valor do select
 function selectedItem(item) {
 	let evt = new Event('change');
@@ -125,6 +140,7 @@ function selectedItem(item) {
 	select.value = value;
 	select.dispatchEvent(evt);
 	hideElement(item.parentNode);
+	toggleIcon(filter.nextSibling);
 }
 
 // Filtrar os itens de acordo com o valor digitado no input
@@ -220,7 +236,8 @@ function getNext(hover) {
 // Selecionar item na lista com o enter
 function chooseItem(list) {
 	const hover = findHovered(list);
-	selectedItem(hover);
+	if (hover)
+		selectedItem(hover);
 }
 
 function findHovered(list) {
