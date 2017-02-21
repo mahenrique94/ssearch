@@ -35,13 +35,22 @@ class SSearch {
 		ssData.classList.add('ss-search__data', 'ss-search__filter');
 		ssData.setAttribute('type', 'text');
 		ssData.setAttribute('aria-controls', `ssSearch__${this.select.id}`);
+		let ssDataAux = document.querySelector(`input[type=hidden][name='${this.select.name}aux']`);
+		if (ssDataAux) {
+			let ssDataValue = ssDataAux.value;
+			setTimeout(function() {
+				ssData.value = list.querySelector(`[data-ss-value='${ssDataValue}']`).textContent;
+			}, 1500);
+		}
+		ssData.addEventListener('blur', function(event) {
+			event.preventDefault();
+			hideElement(list);
+		});
 		ssData.addEventListener('click', function() {
-			this.parentNode.style.height = '300px';
 			filter(ssData, list);
 			showElement(list);
 		});
 		ssData.addEventListener('focus', function() {
-			this.parentNode.style.height = '300px';
 			filter(ssData, list);
 			showElement(list);
 		});
@@ -62,6 +71,7 @@ class SSearch {
 			if (event.keyCode === 13) {
 				event.preventDefault();
 				chooseItem(list);
+				this.blur();
 			}
 		});
 		this.data = ssData;
@@ -120,7 +130,7 @@ function selectedItem(item) {
 // Filtrar os itens de acordo com o valor digitado no input
 function filter(filter, list) {
 	let regExp = new RegExp(filter.value, 'gi');
-	let regExpMark = new RegExp('(([<])([\/]?[a-z]+([a-z0-9\s\=\"\-\_]*))([>]))', 'gim');
+	let regExpMark = new RegExp('(([<])(.*)([>]))', 'gim');
 	if (filter.value != '') {
 		removeHovered(list);
 		list.children.forEach(item => {
@@ -144,6 +154,15 @@ function filter(filter, list) {
 	}
 }
 
+function toggleElement(element) {
+	if (element.classList.contains('is-hide')) {
+		showElement(element);
+	} else {
+		hideElement(element);
+		element.blur();
+	}
+}
+
 function showElement(element) {
 	element.classList.remove('is-hide');
 	element.classList.add('is-show');
@@ -161,18 +180,20 @@ function hideElement(element) {
 // Ir para o item anterior da lista com as setas do teclado
 function previusItem(list) {
 	if (hasItemHovered(list)) {
-		const hover = findHovered(list);
+		let hover = findHovered(list);
+		let previous = getPrevious(hover);
 		hover.classList.remove('is-hovered');
-		hover.previousSibling.classList.add('is-hovered');
+		previous.classList.add('is-hovered');
 	}
 }
 
 // Ir para o próximo item da lista com as setas do teclado
 function nextItem(list) {
 	if (hasItemHovered(list)) {
-		const hover = findHovered(list);
+		let hover = findHovered(list);
+		let next = getNext(hover);
 		hover.classList.remove('is-hovered');
-		hover.nextSibling.classList.add('is-hovered');
+		next.classList.add('is-hovered');
 	} else {
 		const item = list.querySelector('.ss-search__item.is-show');
 		if (item.textContent != '') 
@@ -182,7 +203,21 @@ function nextItem(list) {
 	}
 }
 
-// Selecionar item na lsita com o enter
+function getPrevious(hover) {
+	hover = hover.previousSibling;
+	if (hover.classList.contains('is-hide'))
+		return getPrevious(hover);
+	return hover;
+}
+
+function getNext(hover) {
+	hover = hover.nextSibling;
+	if (hover.classList.contains('is-hide'))
+		return getNext(hover);
+	return hover;
+}
+
+// Selecionar item na lista com o enter
 function chooseItem(list) {
 	const hover = findHovered(list);
 	selectedItem(hover);
