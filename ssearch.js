@@ -19,9 +19,9 @@ class SSearch {
 	
 	// Criando a div que irá agrupar todos os components do ss
 	create() {
-		const ssComponents = document.createElement('DIV');
+		const ssComponents = document.createElement("div");
 		this.list = this.createList();
-		ssComponents.classList.add('ss-search__components');
+		ssComponents.classList.add("ss-search__components");
 		ssComponents.appendChild(this.createFilter());
 		ssComponents.appendChild(this.createIcon());
 		ssComponents.appendChild(this.list);
@@ -31,24 +31,24 @@ class SSearch {
 	// Criando o input responsável por filtrar ou buscar as informações
 	createFilter() {
 		const list = this.list;
-		const ssData = document.createElement('INPUT');
-		ssData.classList.add('ss-search__data', 'ss-search__filter');
-		ssData.setAttribute('type', 'text');
-		ssData.setAttribute('aria-controls', `ssSearch__${this.select.id}`);
-		let ssDataAux = document.querySelector(`input[type=hidden][name='${this.select.name}aux']`);
+		const ssData = document.createElement("input");
+		ssData.classList.add("ss-search__data", "ss-search__filter");
+		ssData.setAttribute("type", "text");
+		ssData.setAttribute("aria-controls", `ssSearch__${this.select.id}`);
+		let ssDataAux = document.querySelector(`input[type=hidden][name="${this.select.name}aux"]`);
 		if (ssDataAux) {
 			let ssDataValue = ssDataAux.value;
 			setTimeout(function() {
-				ssData.value = list.querySelector(`[data-ss-value='${ssDataValue}']`).textContent;
+				ssData.value = list.querySelector(`[data-ss-value="${ssDataValue}"]`).textContent;
 			}, 1500);
 		}
-		ssData.addEventListener('focus', function() {
+		ssData.addEventListener("focus", function() {
 			autoSize(this.parentNode.previousSibling.previousSibling);
 			toggleIcon(this.nextSibling);
 			filter(ssData, list);
 			showElement(list);
 		});
-		ssData.addEventListener('keyup', function(event) {
+		ssData.addEventListener("keyup", function(event) {
 			if (event.keyCode === 38 || event.keyCode === 40) {
 				// seta para cima
 				if (event.keyCode === 38)
@@ -60,7 +60,7 @@ class SSearch {
 				filter(this, list);
 			}
 		});
-		ssData.addEventListener('keypress', function(event) {
+		ssData.addEventListener("keypress", function(event) {
 			// enter
 			if (event.keyCode === 13) {
 				event.preventDefault();
@@ -73,9 +73,9 @@ class SSearch {
 	}
 	
 	createIcon() {
-		const icon = document.createElement('SPAN');
-		icon.classList.add('icon-angle-down', 'ss-search__icon');
-		icon.addEventListener('click', function() {
+		const icon = document.createElement("span");
+		icon.classList.add("icon-angle-down", "ss-search__icon");
+		icon.addEventListener("click", function() {
 			toggleIcon(this);
 			autoSize(this.previousSibling.parentNode.previousSibling.previousSibling);
 		});
@@ -87,10 +87,10 @@ class SSearch {
 	createList() {
 		const createItem = this.createItem;
 		const select = this.select;
-		const list = document.createElement('UL');
-		list.classList.add('ss-search__list', 'is-hide');
-		list.setAttribute('aria-hidden', 'true');
-		list.setAttribute('aria-expanded', 'false');
+		const list = document.createElement("ul");
+		list.classList.add("ss-search__list", "is-hide");
+		list.setAttribute("aria-hidden", "true");
+		list.setAttribute("aria-expanded", "false");
 		setTimeout(function() {
 			select.options.forEach(option => {
 				list.appendChild(createItem(option.textContent, option.value));
@@ -101,11 +101,11 @@ class SSearch {
 	
 	// Criando cada item da lista
 	createItem(text, value) {
-		const item = document.createElement('LI');
-		item.classList.add('ss-search__item');
+		const item = document.createElement("li");
+		item.classList.add("ss-search__item");
 		item.textContent = text;
-		item.setAttribute('data-ss-value', value);
-		item.addEventListener('click', function() {
+		item.setAttribute("data-ss-value", value);
+		item.addEventListener("click", function() {
 			selectedItem(this);
 		});
 		return item;
@@ -114,28 +114,28 @@ class SSearch {
 }
 
 function autoSize(obj) {
-	if (obj.classList.contains('js-autoSize'))
-		obj.parentNode.style.height = '300px';
+	if (obj.classList.contains("js-autoSize"))
+		obj.parentNode.style.height = "300px";
 }
 
 function toggleIcon(icon) {
-	if (icon.classList.contains('icon-angle-down')) {
+	if (icon.classList.contains("icon-angle-down")) {
 		showElement(icon.nextSibling);
-		icon.classList.remove('icon-angle-down');
-		icon.classList.add('icon-angle-up');
+		icon.classList.remove("icon-angle-down");
+		icon.classList.add("icon-angle-up");
 	} else {
 		hideElement(icon.nextSibling);
-		icon.classList.remove('icon-angle-up');
-		icon.classList.add('icon-angle-down');
+		icon.classList.remove("icon-angle-up");
+		icon.classList.add("icon-angle-down");
 	}
 }
 
 // Selecionando o item e definindo ele como valor do select
 function selectedItem(item) {
-	let evt = new Event('change');
-	let value = item.getAttribute('data-ss-value');
-	let filter = item.parentNode.parentNode.querySelector('input.ss-search__filter');
-	let select = item.parentNode.parentNode.parentNode.querySelector('select.ss-search');
+	let evt = new Event("change");
+	let value = item.getAttribute("data-ss-value");
+	let filter = item.parentNode.parentNode.querySelector("input.ss-search__filter");
+	let select = item.parentNode.parentNode.parentNode.querySelector("select.ss-search");
 	filter.value = item.textContent;
 	select.value = value;
 	select.dispatchEvent(evt);
@@ -145,33 +145,33 @@ function selectedItem(item) {
 
 // Filtrar os itens de acordo com o valor digitado no input
 function filter(filter, list) {
-	let regExp = new RegExp(filter.value, 'gi');
-	let regExpMark = new RegExp('(([<])(.*)([>]))', 'gim');
-	if (filter.value != '') {
+	let regExp = new RegExp(filter.value, "gi");
+	let regExpMark = new RegExp("(([<])(.*)([>]))", "gim");
+	if (filter.value != "") {
 		removeHovered(list);
 		list.children.forEach(item => {
-			item.texContent = item.textContent.replace(regExpMark, '');
+			item.texContent = item.textContent.replace(regExpMark, "");
 			let matches = item.textContent.match(regExp);
 			if (matches != null && matches.length > 0) {
 				showElement(item);
-				item.style.display = 'block';
+				item.style.display = "block";
 				matches.forEach(match => item.innerHTML = item.textContent.replace(match, `<mark class="ss-search__match">${match}</mark>`));
 			} else {
-				item.style.display = 'none'; 
+				item.style.display = "none"; 
 				hideElement(item);
 			}
 		});
 	} else {
 		list.children.forEach(item => {
-			item.innerHTML = item.textContent.replace(regExpMark, '');
+			item.innerHTML = item.textContent.replace(regExpMark, "");
 			showElement(item);
-			item.style.display = 'block';
+			item.style.display = "block";
 		});
 	}
 }
 
 function toggleElement(element) {
-	if (element.classList.contains('is-hide')) {
+	if (element.classList.contains("is-hide")) {
 		showElement(element);
 	} else {
 		hideElement(element);
@@ -180,17 +180,17 @@ function toggleElement(element) {
 }
 
 function showElement(element) {
-	element.classList.remove('is-hide');
-	element.classList.add('is-show');
-	element.setAttribute('aria-hidden', 'false');
-	element.setAttribute('aria-expanded', 'true');
+	element.classList.remove("is-hide");
+	element.classList.add("is-show");
+	element.setAttribute("aria-hidden", "false");
+	element.setAttribute("aria-expanded", "true");
 }
 
 function hideElement(element) {
-	element.classList.remove('is-show');
-	element.classList.add('is-hide');
-	element.setAttribute('aria-hidden', 'true');
-	element.setAttribute('aria-expanded', 'false');
+	element.classList.remove("is-show");
+	element.classList.add("is-hide");
+	element.setAttribute("aria-hidden", "true");
+	element.setAttribute("aria-expanded", "false");
 }
 
 // Ir para o item anterior da lista com as setas do teclado
@@ -198,8 +198,8 @@ function previusItem(list) {
 	if (hasItemHovered(list)) {
 		let hover = findHovered(list);
 		let previous = getPrevious(hover);
-		hover.classList.remove('is-hovered');
-		previous.classList.add('is-hovered');
+		hover.classList.remove("is-hovered");
+		previous.classList.add("is-hovered");
 	}
 }
 
@@ -208,27 +208,27 @@ function nextItem(list) {
 	if (hasItemHovered(list)) {
 		let hover = findHovered(list);
 		let next = getNext(hover);
-		hover.classList.remove('is-hovered');
-		next.classList.add('is-hovered');
+		hover.classList.remove("is-hovered");
+		next.classList.add("is-hovered");
 	} else {
-		const item = list.querySelector('.ss-search__item.is-show');
-		if (item.textContent != '') 
-			item.classList.add('is-hovered');
+		const item = list.querySelector(".ss-search__item.is-show");
+		if (item.textContent != "") 
+			item.classList.add("is-hovered");
 		else
-			item.nextSibling.classList.add('is-hovered');
+			item.nextSibling.classList.add("is-hovered");
 	}
 }
 
 function getPrevious(hover) {
 	hover = hover.previousSibling;
-	if (hover.classList.contains('is-hide'))
+	if (hover.classList.contains("is-hide"))
 		return getPrevious(hover);
 	return hover;
 }
 
 function getNext(hover) {
 	hover = hover.nextSibling;
-	if (hover.classList.contains('is-hide'))
+	if (hover.classList.contains("is-hide"))
 		return getNext(hover);
 	return hover;
 }
@@ -241,7 +241,7 @@ function chooseItem(list) {
 }
 
 function findHovered(list) {
-	return list.querySelector('.is-hovered');
+	return list.querySelector(".is-hovered");
 }
 
 function hasItemHovered(list) {
@@ -251,10 +251,10 @@ function hasItemHovered(list) {
 function removeHovered(list) {
 	let hover = findHovered(list);
 	if (hover != undefined)
-		hover.classList.remove('is-hovered');
+		hover.classList.remove("is-hovered");
 }
 
-const selects = document.querySelectorAll('select.ss-search');
+const selects = document.querySelectorAll("select.ss-search");
 if (selects.length > 0) {
 	selects.forEach(select => {
 		let ssearch = new SSearch(select).init();
