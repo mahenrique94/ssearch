@@ -32,7 +32,7 @@ class SSearch {
 	createFilter() {
 		const list = this.list;
 		const ssData = document.createElement("input");
-		ssData.classList.add("ss-search__data", "ss-search__filter");
+		ssData.classList.add("o-form__data", "ss-search__data", "ss-search__filter");
 		ssData.setAttribute("type", "text");
 		ssData.setAttribute("aria-controls", `ssSearch__${this.select.id}`);
 		let ssDataAux = document.querySelector(`input[type=hidden][name="${this.select.name}aux"]`);
