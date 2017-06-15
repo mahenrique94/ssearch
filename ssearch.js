@@ -39,7 +39,8 @@ class SSearch {
 		if (ssDataAux) {
 			let ssDataValue = ssDataAux.value;
 			setTimeout(function() {
-				ssData.value = list.querySelector(`[data-ss-value="${ssDataValue}"]`).textContent;
+				let ssDataItem = list.querySelector(`[data-ss-value="${ssDataValue}"]`);
+				ssData.value = ssDataItem ? ssDataItem.textContent : "";
 			}, 1500);
 		}
 		ssData.addEventListener("focus", function() {
@@ -109,6 +110,12 @@ class SSearch {
 			selectedItem(this);
 		});
 		return item;
+	}
+	
+	update() {
+		this.list.remove();
+		this.list = this.createList()
+		this.data.parentNode.appendChild(this.list);
 	}
 	
 }
@@ -250,13 +257,17 @@ function hasItemHovered(list) {
 
 function removeHovered(list) {
 	let hover = findHovered(list);
-	if (hover != undefined)
+	if (hover)
 		hover.classList.remove("is-hovered");
 }
 
 const selects = document.querySelectorAll("select.ss-search");
 if (selects.length > 0) {
 	selects.forEach(select => {
-		let ssearch = new SSearch(select).init();
+		let ssearch = new SSearch(select);
+		ssearch.init();
+		select.addEventListener("change", function() {
+			ssearch.update();
+		});
 	});
 }
