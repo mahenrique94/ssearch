@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+     <link href="assets/css/normalize.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/reset.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/config.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/page.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/header.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/aside.css" rel="stylesheet" type="text/css">
+</head>
+<body class="o-body">
+    {% include header.html %}
+    {% include aside.html %}
+    <main class="o-content">
+        {{ content }}
+    </main>
+    {% include footer.html %}
+</body>
+</html>

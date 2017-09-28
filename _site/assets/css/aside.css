@@ -1,0 +1,4 @@
+.o-menu {
+    background: var(--colorPrimary);
+    grid-area: aside;
+}

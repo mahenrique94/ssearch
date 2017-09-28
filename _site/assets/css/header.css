@@ -1,0 +1,18 @@
+.o-header {
+    border-bottom: var(--border);
+    grid-area: header;
+    padding: 0 var(--padding);
+}
+.o-header__title {
+    height: 100%;
+    line-height: var(--headerHeight);
+}
+.o-header__title::before {
+    content: "#";
+    color: var(--colorPrimary);
+    margin-right: .5rem;
+}
+.o-header__link {
+    color: #595959;
+    font-weight: 700;
+}

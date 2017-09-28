@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    font-weight: 300;
+}
+
+a {
+    color: var(--colorPrimary);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+code {
+    background: #EBEBEB;
+    color: #595959;
+    padding: .05rem .2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h4 {
+    border-bottom: var(--border);
+    border-left: 2px solid var(--colorPrimary);
+    padding-left: .2rem;
+}
+
+li {
+    list-style: none;
+}
+
+p {
+    line-height: 1.5;
+}
+
+strong {
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
