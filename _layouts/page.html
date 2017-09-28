@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
+    <title>{{ site.title }}{% if page.title != site.title %}&nbsp;|&nbsp;{{ page.title }}{% endif %}</title>
+     <link href="assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
      <link href="assets/css/normalize.css" rel="stylesheet" type="text/css">
      <link href="assets/css/reset.css" rel="stylesheet" type="text/css">
      <link href="assets/css/config.css" rel="stylesheet" type="text/css">
      <link href="assets/css/page.css" rel="stylesheet" type="text/css">
      <link href="assets/css/header.css" rel="stylesheet" type="text/css">
      <link href="assets/css/aside.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/nav.css" rel="stylesheet" type="text/css">
 </head>
 <body class="o-body">
     {% include header.html %}
-    {% include aside.html %}
+    {% include aside.html nav = site.data.nav social = site.data.social %}
     <main class="o-content">
         {{ content }}
     </main>

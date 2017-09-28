@@ -15,6 +15,4 @@ A única dependência do **[SSearch](/)** é que seu navegador esteja sempre atu
 
 #### Próximos passos:
 
-- [Instalação](/instalacao)
-- [Documentação](/documentacao)
-- [Demo](/demo)
+{% include nav.html nav = site.data.nav %}

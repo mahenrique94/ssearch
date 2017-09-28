@@ -1,0 +1,8 @@
+- name: Instalação
+  link: /instalacao
+
+- name: Documentação
+  link: /documentacao
+
+- name: Demo
+  link: /demo
