@@ -25,4 +25,5 @@
             "aside footer";
     grid-template-rows: var(--headerHeight) auto var(--footerHeight);
     grid-template-columns: var(--asideWidth) var(--pageWidth);
+    overflow: hidden;
 }
