@@ -11,6 +11,7 @@
      <link href="assets/css/header.css" rel="stylesheet" type="text/css">
      <link href="assets/css/aside.css" rel="stylesheet" type="text/css">
      <link href="assets/css/nav.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/footer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="o-body">
     {% include header.html %}
@@ -18,6 +19,6 @@
     <main class="o-content">
         {{ content }}
     </main>
-    {% include footer.html %}
+    {% include footer.html project = site.data.project %}
 </body>
 </html>

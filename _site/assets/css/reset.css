@@ -23,8 +23,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h4 {
     border-bottom: var(--border);
-    border-left: 2px solid var(--colorPrimary);
-    padding-left: .2rem;
+    border-left: 3px solid var(--colorPrimary);
+    padding: .25rem .5rem;
 }
 
 li {

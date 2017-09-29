@@ -4,18 +4,31 @@
     flex-direction: column;
     grid-area: aside;
     justify-content: space-between;
-    padding: var(--padding);
+    padding: 0 var(--padding);
 }
 .o-aside__title {
+    border: 1px solid var(--colorText);
+    border-left-color: transparent;
+    border-right-color: transparent;
     font-size: 2.5rem;
     margin-bottom: 5rem;
-    margin-top: 1rem;
+    margin-top: 3.2rem;
     text-align: center;
     text-transform: uppercase;
+    transition: all .225s ease-in;
+}
+.o-aside__title:hover {
+    border-bottom-color: transparent;
+    border-left-color: var(--colorText);
+    border-right-color: var(--colorText);
+    border-top-color: transparent;
 }
 .o-aside__title___link {
     color: var(--colorText);
     font-weight: 500;
+}
+.o-aside__title___link:hover {
+    text-decoration: none;
 }
 .o-aside__list {
     padding: 0;
