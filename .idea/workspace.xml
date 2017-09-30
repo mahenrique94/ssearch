@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50338666-20f8-4e79-a6c9-a93ff035e960" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/lib/ssearch.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/assets/lib/ssearch.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/lib/ssearch.css" afterPath="$PROJECT_DIR$/lib/ssearch.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/lib/ssearch.js" afterPath="$PROJECT_DIR$/lib/ssearch.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/page.html" afterPath="$PROJECT_DIR$/_layouts/page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/assets/css/aside.css" afterPath="$PROJECT_DIR$/_site/assets/css/aside.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/demo.html" afterPath="$PROJECT_DIR$/_site/demo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/documentacao.html" afterPath="$PROJECT_DIR$/_site/documentacao.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/index.html" afterPath="$PROJECT_DIR$/_site/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/instalacao.html" afterPath="$PROJECT_DIR$/_site/instalacao.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/aside.css" afterPath="$PROJECT_DIR$/assets/css/aside.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -79,8 +69,8 @@
         <option value="$PROJECT_DIR$/assets/css/page.css" />
         <option value="$PROJECT_DIR$/_includes/aside.html" />
         <option value="$PROJECT_DIR$/assets/js/responsive.js" />
-        <option value="$PROJECT_DIR$/_layouts/page.html" />
         <option value="$PROJECT_DIR$/assets/css/aside.css" />
+        <option value="$PROJECT_DIR$/_layouts/page.html" />
       </list>
     </option>
   </component>
@@ -128,6 +118,11 @@
             <path>
               <item name="ssearch" type="b2602c69:ProjectViewProjectNode" />
               <item name="ssearch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssearch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssearch" type="462c0819:PsiDirectoryNode" />
+              <item name="_layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -187,12 +182,12 @@
       <workItem from="1506700884963" duration="114000" />
       <workItem from="1506701043707" duration="47000" />
       <workItem from="1506701107636" duration="2915000" />
-      <workItem from="1506781145164" duration="8489000" />
+      <workItem from="1506781145164" duration="8709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25160000" />
+    <option name="totallyTimeSpent" value="25380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
@@ -554,18 +549,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_layouts/page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/aside.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_layouts/page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding />
         </state>
       </provider>
