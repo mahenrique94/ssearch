@@ -1,16 +1,15 @@
 .o-aside {
     background: var(--colorPrimary);
-    display: flex;
     flex-direction: column;
     grid-area: aside;
     justify-content: space-between;
-    padding: 0 var(--padding);
+    padding: .7rem var(--padding);
+    z-index: 1;
 }
 .o-aside__title {
     border: 1px solid var(--colorText);
     border-left-color: transparent;
     border-right-color: transparent;
-    font-size: 2.5rem;
     margin-bottom: 5rem;
     margin-top: 3.2rem;
     text-align: center;
@@ -46,6 +45,7 @@
 .o-aside__list--social {
     display: flex;
     justify-content: space-between;
+    text-align: center;
 }
 .o-aside__list--social .o-aside__link {
     display: block;

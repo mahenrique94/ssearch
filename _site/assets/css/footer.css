@@ -6,13 +6,13 @@
     justify-content: space-between;
     padding: 0 var(--padding);
 }
-.o-footer .o-footer__list {
+.o-footer__list {
     margin: 0;
     padding: 0;
 }
-.o-footer .o-footer__item {
+.o-footer__item {
     display: inline-block;
 }
-.o-footer .o-footer__link {
+.o-footer__link {
     padding-left: .5rem;
 }

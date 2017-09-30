@@ -1,6 +1,9 @@
 .o-header {
+    align-items: center;
+    display: flex;
     border-bottom: var(--border);
     grid-area: header;
+    justify-content: space-between;
     padding: 0 var(--padding);
 }
 .o-header__title {
@@ -15,6 +18,12 @@
 .o-header__link {
     color: #595959;
     font-weight: 700;
+}
+.o-header__menu {
+    background: transparent;
+    border: none;
+    color: var(--colorPrimary);
+    font-size: 1.7rem;
 }
 .o-header__sourceCode {
     background: var(--colorPrimary);

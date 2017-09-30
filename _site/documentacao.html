@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSearch&nbsp;|&nbsp;Documentação</title>
+     <link href="assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/stilize/stilize.min.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/prism/prism.css" rel="stylesheet" type="text/css">
+     <link href="assets/lib/ssearch.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/normalize.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/reset.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/config.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/page.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/header.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/aside.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/nav.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/footer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="o-body">
+    <header class="o-header">
+    <h1 class="o-header__title"><a class="o-header__link" href="/">Documentação</a></h1>
+    <button class="o-header__menu" onclick="toggleAside();" type="button"><i class="icon-menu"></i></button>
+    <a class="o-header__sourceCode" href="https://github.com/mahenrique94/ssearch">Github</a>
+</header>
+
+    <aside class="o-aside js-o-aside">
+    <h2 class="o-aside__title"><a class="o-aside__title___link" href="/">SSearch</a></h2>
+    <ul class="o-aside__list">
+        
+            <li class="o-aside__item"><a class="o-aside__link" href="/instalacao" title="Instalação">Instalação</a></li>
+        
+            <li class="o-aside__item"><a class="o-aside__link" href="/documentacao" title="Documentação">Documentação</a></li>
+        
+            <li class="o-aside__item"><a class="o-aside__link" href="/demo" title="Demo">Demo</a></li>
+        
+    </ul>
+    <ul class="o-aside__list o-aside__list--social">
+        
+            <li class="o-aside__item"><a class="o-aside__link" href="https://www.facebook.com/matheus.castiglioni.5" target="_blank" title="Facebook"><i class="fa fa-facebook-square"></i></a></li>
+        
+            <li class="o-aside__item"><a class="o-aside__link" href="https://github.com/mahenrique94" target="_blank" title="Github"><i class="fa fa-github"></i></a></li>
+        
+            <li class="o-aside__item"><a class="o-aside__link" href="https://plus.google.com/116607343343494563581" target="_blank" title="Google Plus"><i class="fa fa-google-plus-circle"></i></a></li>
+        
+            <li class="o-aside__item"><a class="o-aside__link" href="https://www.instagram.com/mahenrique94/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+        
+            <li class="o-aside__item"><a class="o-aside__link" href="https://www.linkedin.com/in/matheus-castiglioni-7aa105114/" target="_blank" title="Linkedin"><i class="fa fa-linkedin-square"></i></a></li>
+        
+            <li class="o-aside__item"><a class="o-aside__link" href="https://twitter.com/mahenrique94" target="_blank" title="Twitter"><i class="fa fa-twitter-square"></i></a></li>
+        
+    </ul>
+</aside>
+    <main class="o-content">
+        <h3 id="começe-a-usar-o-ssearch">Começe a usar o <a href="/">SSearch</a></h3>
+
+<p>Para habilitar a opção de realizar filtro nos seus <code class="highlighter-rouge">selects</code> devemos simplesmente adicionar a classe <code class="highlighter-rouge">ss-search</code> no <code class="highlighter-rouge">select</code> que devemos realizar filtro:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">".ss-search"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/select&gt;</span>
+</code></pre>
+</div>
+
+<p>Com isso você já deve ser capaz de realizar o filtro no select, em caso de dúvidas visualize a <a href="/demo">demonstração</a> do SSearch.</p>
+
+    </main>
+    <footer class="o-footer">
+    <div class="o-footer__author">
+        <span class="o-footer__author___development">Desenvolvido por</span>
+        <span class="o-footer__author___name"><a href="http://www.matheuscastiglioni.com.br" target="_blank">Matheus Castiglioni</a></span>
+        <span class="o-footer__author___separator">-</span>
+        <span class="o-footer__author___blog"><a href="http://blog.matheuscastiglioni.com.br" target="_blank">Blog</a></span>
+    </div>
+    <ul class="o-footer__list">
+        
+        <li class="o-footer__item"><a href="jlib.matheuscastiglioni.com.br" class="o-footer__link">JLib</a></li>
+        
+        <li class="o-footer__item"><a href="mdown.matheuscastiglioni.com.br" class="o-footer__link">MDown</a></li>
+        
+        <li class="o-footer__item"><a href="mhc.matheuscastiglioni.com.br" class="o-footer__link">MHC</a></li>
+        
+        <li class="o-footer__item"><a href="mhcws.matheuscastiglioni.com.br" class="o-footer__link">MHCWS</a></li>
+        
+        <li class="o-footer__item"><a href="ssearch.matheuscastiglioni.com.br" class="o-footer__link">SSearch</a></li>
+        
+        <li class="o-footer__item"><a href="stilize.matheuscastiglioni.com.br" class="o-footer__link">Stilize</a></li>
+        
+    </ul>
+</footer>
+    <script src="assets/js/prism/prism.js" type="text/javascript"></script>
+    <script src="assets/js/stilize/stilize.min.js" type="text/javascript"></script>
+    <script src="assets/lib/ssearch.js" type="text/javascript"></script>
+    <script src="assets/js/responsive.js" type="text/javascript"></script>
+</body>
+</html>

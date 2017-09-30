@@ -1,4 +1,15 @@
+# Information
 autor: Matheus Castiglioni
+baseurl: ""
+description: "Documentação do projeto SSearch"
+email: matheushcastiglioni@gmail.com
+title: "SSearch"
+url: ssearch.matheuscastiglioni.com.br
+
+# Configuration
+collections:
+  pages:
+    output: true
+    permalink: /:name
 layout: "page"
 static_files: "assets/"
-title: "SSearch"

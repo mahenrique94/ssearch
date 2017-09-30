@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>SSearch</title>
      <link href="assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/stilize/stilize.min.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/prism/prism.css" rel="stylesheet" type="text/css">
+     <link href="assets/lib/ssearch.css" rel="stylesheet" type="text/css">
+     <link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
      <link href="assets/css/normalize.css" rel="stylesheet" type="text/css">
      <link href="assets/css/reset.css" rel="stylesheet" type="text/css">
      <link href="assets/css/config.css" rel="stylesheet" type="text/css">
@@ -16,10 +20,11 @@
 <body class="o-body">
     <header class="o-header">
     <h1 class="o-header__title"><a class="o-header__link" href="/">SSearch</a></h1>
+    <button class="o-header__menu" onclick="toggleAside();" type="button"><i class="icon-menu"></i></button>
     <a class="o-header__sourceCode" href="https://github.com/mahenrique94/ssearch">Github</a>
 </header>
 
-    <aside class="o-aside">
+    <aside class="o-aside js-o-aside">
     <h2 class="o-aside__title"><a class="o-aside__title___link" href="/">SSearch</a></h2>
     <ul class="o-aside__list">
         
@@ -51,15 +56,15 @@
 
 <p>Com ele basta adicionar uma classe no elemento e o mesmo já esta totalmente pronto para ser filtrado sem realizar requisições <code class="highlighter-rouge">AJAX</code> para o servidor.</p>
 
-<h4 id="pré-requísitos">Pré Requísitos:</h4>
+<h3 id="pré-requísitos">Pré Requísitos:</h3>
 
 <ul>
   <li>Navegador atualizado</li>
 </ul>
 
-<p>A única dependência do <strong><a href="/">SSearch</a></strong> é que seu navegador esteja sempre atualizado, pois utilizamos os recursos mais modernos referente ao <code class="highlighter-rouge">HTML5</code>, <code class="highlighter-rouge">CSS3</code> e <code class="highlighter-rouge">JS</code>.</p>
+<p>A única dependência do <a href="/">SSearch</a> é que seu navegador esteja sempre atualizado, pois utilizamos os recursos mais modernos referente ao <code class="highlighter-rouge">HTML5</code>, <code class="highlighter-rouge">CSS3</code> e <code class="highlighter-rouge">JS</code>.</p>
 
-<h4 id="próximos-passos">Próximos passos:</h4>
+<h3 id="próximos-passos">Próximos passos:</h3>
 
 <ul class="o-nav__list">
     
@@ -95,5 +100,9 @@
         
     </ul>
 </footer>
+    <script src="assets/js/prism/prism.js" type="text/javascript"></script>
+    <script src="assets/js/stilize/stilize.min.js" type="text/javascript"></script>
+    <script src="assets/lib/ssearch.js" type="text/javascript"></script>
+    <script src="assets/js/responsive.js" type="text/javascript"></script>
 </body>
 </html>
