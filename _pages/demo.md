@@ -7,7 +7,7 @@ title: Demo
 
 Logo abaixo esta o select com a classe `ss-search` informada, o mesmo já recebe um estilo e ao ser clicado podemos digitar algum texto que irá procurar se contém em alguma parte de algum `option` dentro do `select`.
 
-A parte que coincidir com o `value` de algum `option` estara grifada em verde.
+A parte que coincidir com o `value` de algum `option` estará grifada em verde.
 
 <select class="ss-search">
     <option value=""></option>
