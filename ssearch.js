@@ -50,15 +50,17 @@ class SSearch {
 			showElement(list);
 		});
 		ssData.addEventListener("keyup", function(event) {
-			if (event.keyCode === 38 || event.keyCode === 40) {
-				// seta para cima
-				if (event.keyCode === 38)
-					previusItem(list);
-				// seta para baixo
-				if (event.keyCode === 40)
-					nextItem(list);
-			} else {
-				filter(this, list);
+			if (event.target.value) {
+				if (event.keyCode === 38 || event.keyCode === 40) {
+					// seta para cima
+					if (event.keyCode === 38)
+						previusItem(list);
+					// seta para baixo
+					if (event.keyCode === 40)
+						nextItem(list);
+				} else {
+					filter(this, list);
+				}
 			}
 		});
 		ssData.addEventListener("keypress", function(event) {
@@ -121,8 +123,10 @@ class SSearch {
 }
 
 function autoSize(obj) {
-	if (obj.classList.contains("js-autoSize"))
-		obj.parentNode.style.height = "300px";
+	if (obj) {
+		if (obj.classList.contains("js-autoSize"))
+			obj.parentNode.style.height = "300px";
+	}
 }
 
 function toggleIcon(icon) {
