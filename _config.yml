@@ -17,4 +17,3 @@ css: lib/ssearch.css
 layout: "page"
 js: lib/ssearch.js
 static_files: "assets/"
-theme: mhc-project-doc
