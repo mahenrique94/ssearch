@@ -3,7 +3,7 @@
     min-height: calc(100vh - (var(--headerHeight) + var(--footerHeight)));
     padding: var(--padding);
 }
-.o-content ul {
+.o-content > ul {
     margin: 1rem 2rem;
 }
 
